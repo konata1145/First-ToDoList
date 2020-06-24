@@ -7,6 +7,12 @@ const TODOS_LS = 'toDos';
 
 let toDos = [];
 
+function changecolor(){
+    event.target.style.background = "#ffffff";
+}
+function changecolor1(){
+    event.target.style.background = "#2b303b";
+}
 function deleteToDo(event){
     const btn = event.target;
     const li = btn.parentNode;
@@ -31,7 +37,16 @@ function paintToDo(text){
     const span = document.createElement("span");
     const newId = toDos.length + 1;
     delBtn.innerText = "X";
+    delBtn.addEventListener("mouseover", changecolor, false);
+    delBtn.addEventListener("mouseout", changecolor1, false);
     delBtn.addEventListener("click", deleteToDo);
+    delBtn.style.float = 'right';
+    delBtn.style.width = '35px';
+    delBtn.style.height = "35px";
+    delBtn.style.background = '#2b303b';
+    delBtn.style.color = '#ccc';
+    delBtn.style.borderRadius = "15px";
+    delBtn.style.borderColor = '#2b303b';
     span.innerText = text;
     li.appendChild(span);
     li.appendChild(delBtn);
@@ -75,4 +90,6 @@ function init(){
     toDoForm.addEventListener("submit", handleSubmit);
 
 }
+
+
 init();

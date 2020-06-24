@@ -59,30 +59,40 @@ body{
     color: white;
     font-size: 32px;
     text-align: center;
-    margin-top: 300px;
+    margin-top: 200px;
     animation: tracking-in-contract 1s;
 }
 
 .js-form{
-    margin-top:  -60px;
+    margin-top: -60px;
     text-align: center;
-    block-size: 18px;
+    block-size: 50px;
     
 }
 
 input{
-    border: #000;
-    padding: 0px;
-    font-size: 16px;
-    color: ivory;
-
+  width : 300px;
+  height: 30px;
+  background: #2b303b;
+  border: none;
+  font-size: 14pt;
+  color: white;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  border-top: none;
+  animation: tracking-in-expand 1s;
 }
 
 input::placeholder {
-    color: white;
-    text-align: center;
-    background-color: gray;
-    animation: tracking-in-expand 1s;
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  animation: tracking-in-expand 1s;
  }
 
  .form,
@@ -97,7 +107,6 @@ input::placeholder {
 
 .showing{
     display: block;
-
  }
 
  .js-toDoForm{
@@ -105,37 +114,58 @@ input::placeholder {
      text-align: center;
  }
 
+
  .js-toDoList{
-     display: table;
-     margin-left: auto;
-     margin-right: auto;
-     color: white;
+     display: inline-block;
+     margin-left: 40em;
+     color: gray;
      font-size:18px;
      animation: tracking-in-expand 0.1s;
  }
 
+ image {
+  margin-right: 10px;
+  margin-top: 20px;
+ }
  
  li {
     list-style: none;
-    color: #fff;
+    color: white;
+    background-color: #2b303b;
+    border-radius: 10px 10px 10px 10px;
     height: 0;
+    font-size: 14pt;
     line-height: 2em;
-    margin: 0;
-    padding: 0 0.5em;
+    margin: 10px 10px;
+    padding-left: 35px;
+    width: 20em;
     overflow: hidden;
-    width: 10em;
     transition: all 0.4s ease-out;
     opacity: 0;
   }
-  
+
   li.show {
     height: 2em;
     margin: 2px 0;
     opacity: 1;
   }
+ .delBtn:hover{
+   animation: fadeOut .5s;
+
+ }
+  
  
-  
-  
+@keyframes fadeOut{
+     from{
+         opacity: 0;
+         border-color: #ffffff;
+        }
+        to{
+            opacity: 1;
+            border-color: #ffffff;
+        }
+ }
+
  @keyframes fadeIn{
      from{
          opacity: 0;
@@ -154,3 +184,4 @@ input::placeholder {
     z-index: -1;
     animation: fadeIn .5s linear;
 }
+
